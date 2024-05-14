@@ -1,0 +1,356 @@
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+.side-nav {
+  background-color: map-get($color, "Fadedblue");
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  transition: all 0.5s;
+  overflow: hidden;
+
+  h1 {
+    text-align: center;
+    color: map-get($color, "White");
+    font-size: 30px;
+    font-family: "Passion One", sans-serif;
+    margin-top: $margin-ten;
+  }
+
+  hr {
+    margin: $margin-ten;
+    border: 0.5px solid #8a7dd0;
+  }
+
+  .links {
+    list-style-type: none;
+
+    li {
+      padding: 15px;
+      margin-left: 35px;
+
+      a {
+        color: map-get($color, "White");
+        text-decoration: none;
+        font-family: "Nunito", sans-serif;
+        font-weight: 600;
+        transition: all 0.5s;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        &:hover {
+          background-color: map-get($color, "White");
+          color: map-get($color, "Fadedblue");
+          padding: $padding-ten 13px;
+          border-radius: $border-radius-ten;
+          font-weight: bold;
+        }
+      }
+      a span {
+        overflow: hidden;
+      }
+
+      img {
+        background-color: map-get($color, "Fadedblue");
+      }
+    }
+  }
+}
+
+.side-nav_buttom {
+  background-color: map-get($color, "White");
+  padding: $padding-thirty;
+  width: 200px;
+  border-radius: $border-radius-fifteen;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  
+
+  .upgrade{
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    color: map-get($color, "darkblue");
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: $margin-fifteen;
+    font-family: "Nunito", sans-serif;
+    background-color: map-get($color, "lightorange");
+    color: map-get($color, "White");
+    padding: $padding-ten 20px;
+    border: none;
+    border-radius: $border-radius-twenty;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .side-nav {
+    width: 100px;
+
+    &:hover {
+      width: 240px;
+      transition: 0.5s;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
+
+
+.main-content{
+  position: relative;
+  width: 100%;
+  margin-left: 20vw;
+  border-top-left-radius: $border-radius-thirty;
+  border-bottom-left-radius: $border-radius-thirty;
+}
+
+.header-content {
+  @include flex(space-between);
+  margin-top: $margin-ten;
+
+  h1{
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+  }
+
+  .profile{
+     @include flex(none);
+     align-items: center;
+
+    .one select  {
+      border: none;
+     padding: 5px 10px; 
+     color: map-get($color, "lightgray" );
+     font-family: "Nunito", sans-serif;
+     font-weight: bold;
+     margin-right: 10px
+   }
+  }
+
+  .OverView{
+   @include flex(none);
+   gap: 40px
+  }
+
+  .search-engine {
+    @include flex(none);
+    width: 300px;
+    border-radius: $border-radius-thirty;
+    padding: 3px;
+    background-color: map-get($color, "light-blue" );
+  
+    ::placeholder{
+      font-family: "Nunito", sans-serif;
+      color: map-get($color, "Fadedblue" );
+      font-weight: bold;
+    }
+  
+    input {
+      background: transparent;
+      outline: none;
+      border: $border-radius-fifteen;
+      padding: 7px $padding-ten;
+      width: 250px;
+    }
+    
+    .search {
+      width: $md;
+      padding: $padding - 5;
+      transition: all 0.5s ease-in-out;
+    }
+    .search:hover{
+     transform: rotate(360deg);
+    }
+  }
+  
+}
+
+
+.top-sales{
+ 
+  p{
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    margin-top: $margin-thirty;
+  }
+
+  table{
+    // border-collapse: collapse;
+    font-family: "Nunito", sans-serif;
+    
+    tr{
+      display: grid;
+      grid-template-columns: repeat(7, 2fr);
+      align-items: center;
+      place-content: center;
+      justify-items: center;
+      gap: 23px;    
+      border: 2px solid map-get($color, "fadedgray" );
+      border-radius: 20px;
+      margin-top: $margin-fifteen;
+
+
+
+      th{
+        font-size: 15px;
+        color: map-get($color, "gray" );
+        padding: $padding;
+      } 
+
+      .cents{
+        color: #000;
+        font-weight: bold;
+      }
+      
+      .gold{
+        color: map-get($color, "gold" );
+      }
+      .silver{
+        color: map-get($color, "lightgreen")
+      }
+    }
+  }
+}
+
+
+
+.sales{
+  @include flex(space-between);
+  padding-right: 7px;
+}
+
+.slaes-hightlight{
+  border: 2px solid map-get($color, "lightergray");
+  border-radius: 20px;
+  margin-top: $margin-twenty;
+  width: 22.5%;
+  padding: $padding-fifteen;
+}
+.sales-margin{
+  @include flex(space-between);
+  padding: 3px $padding-fifteen;
+  font-family: "Nunito", sans-serif;
+
+  p{
+    font-size: 12px;
+    color: map-get($color, "gray");
+    margin-top: $margin;
+  }
+
+  h1{
+    font-size: 25px
+  }
+}
+
+
+.gains{
+  @include flex(space-between);
+  padding: 4px $padding-fifteen;
+  font-family: "Nunito", sans-serif;
+
+  .roi{
+    @include flex(none);
+    gap: 7px;
+
+    h6{
+      color: map-get($color, "fadedgreen" );
+    }
+
+    .red{
+      color: map-get($color, "lightred" );
+    }
+  }
+
+  .report a{
+    color: map-get($color, "Fadedblue" );
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+
+
+.analytics{
+  // background-image: url(image1.png);
+  @include flex(space-between);
+  padding-right: 7px;
+  margin-top: $margin-twenty;
+ 
+.graph-card{
+  width: 95%;
+}
+
+  .analytics-sales{
+    background-color: map-get($color, "Fadedblue");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: $margin-twenty 0;
+    border-radius: 20px;
+    width: 40%;
+    padding: $padding-twenty;
+  }
+
+  .the_target{
+    @include flex(none);
+
+    p{
+      padding: 7px $padding-fifteen;
+      color: map-get($color, "White" );
+      font-family: "Nunito", sans-serif;
+      font-size: 12px;
+    }
+
+   h1{
+      padding: 0  $padding-fifteen;
+      color: map-get($color, "White" );
+      font-family: "Nunito", sans-serif;
+      font-size: 25px;
+    }
+  }
+
+  .que{
+    margin-top: 20px;
+
+    .cleared{
+      @include flex(space-between);
+    }
+
+    p{
+      padding: 5px $padding-fifteen;
+      color: map-get($color, "White" );
+      font-family: "Nunito", sans-serif;
+      font-size: 12px;
+    }
+
+    h1{
+      padding:0 $padding-fifteen;
+      color: map-get($color, "White" );
+      font-family: "Nunito", sans-serif;
+      font-size: 25px
+    }
+
+    .bills{
+      @include flex(none);
+    }
+  }
+}

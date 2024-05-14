@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@font-face {
+  font-family: "Proxima";
+  font-style: normal;
+  src: url("../Proxima Nova Font.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+.side-nav {
+  background-color: #5041BC;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.side-nav h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  font-family: "Passion One", sans-serif;
+  margin-top: 10px;
+}
+.side-nav hr {
+  margin: 10px;
+  border: 0.5px solid #8a7dd0;
+}
+.side-nav .links {
+  list-style-type: none;
+}
+.side-nav .links li {
+  padding: 15px;
+  margin-left: 35px;
+}
+.side-nav .links li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.side-nav .links li a:hover {
+  background-color: #fff;
+  color: #5041BC;
+  padding: 10px 13px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.side-nav .links li a span {
+  overflow: hidden;
+}
+.side-nav .links li img {
+  background-color: #5041BC;
+}
+
+.side-nav_buttom {
+  background-color: #fff;
+  padding: 30px;
+  width: 200px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+}
+.side-nav_buttom .upgrade {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  color: #263156;
+  font-weight: bold;
+}
+.side-nav_buttom button {
+  margin-top: 15px;
+  font-family: "Nunito", sans-serif;
+  background-color: #FF8057;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .side-nav {
+    width: 100px;
+  }
+  .side-nav:hover {
+    width: 240px;
+    transition: 0.5s;
+  }
+  .side-nav h1 {
+    font-size: 20px;
+  }
+}
+.main-content {
+  position: relative;
+  width: 100%;
+  margin-left: 20vw;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.header-content h1 {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+.header-content .profile {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  align-items: center;
+}
+.header-content .profile .one select {
+  border: none;
+  padding: 5px 10px;
+  color: #54657E;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.header-content .OverView {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  gap: 40px;
+}
+.header-content .search-engine {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  width: 300px;
+  border-radius: 30px;
+  padding: 3px;
+  background-color: #F5F3FF;
+}
+.header-content .search-engine ::-moz-placeholder {
+  font-family: "Nunito", sans-serif;
+  color: #5041BC;
+  font-weight: bold;
+}
+.header-content .search-engine ::placeholder {
+  font-family: "Nunito", sans-serif;
+  color: #5041BC;
+  font-weight: bold;
+}
+.header-content .search-engine input {
+  background: transparent;
+  outline: none;
+  border: 15px;
+  padding: 7px 10px;
+  width: 250px;
+}
+.header-content .search-engine .search {
+  width: 1.25rem;
+  padding: 0px;
+  transition: all 0.5s ease-in-out;
+}
+.header-content .search-engine .search:hover {
+  transform: rotate(360deg);
+}
+
+.top-sales p {
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  margin-top: 30px;
+}
+.top-sales table {
+  font-family: "Nunito", sans-serif;
+}
+.top-sales table tr {
+  display: grid;
+  grid-template-columns: repeat(7, 2fr);
+  align-items: center;
+  place-content: center;
+  justify-items: center;
+  gap: 23px;
+  border: 2px solid #EBE8FF;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+.top-sales table tr th {
+  font-size: 15px;
+  color: #797D8C;
+  padding: 5px;
+}
+.top-sales table tr .cents {
+  color: #000;
+  font-weight: bold;
+}
+.top-sales table tr .gold {
+  color: #F7941D;
+}
+.top-sales table tr .silver {
+  color: #43BE83;
+}
+
+.sales {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 7px;
+}
+
+.slaes-hightlight {
+  border: 2px solid #D3CBFB;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 22.5%;
+  padding: 15px;
+}
+
+.sales-margin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 15px;
+  font-family: "Nunito", sans-serif;
+}
+.sales-margin p {
+  font-size: 12px;
+  color: #797D8C;
+  margin-top: 5px;
+}
+.sales-margin h1 {
+  font-size: 25px;
+}
+
+.gains {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 15px;
+  font-family: "Nunito", sans-serif;
+}
+.gains .roi {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  gap: 7px;
+}
+.gains .roi h6 {
+  color: #6AD2A0;
+}
+.gains .roi .red {
+  color: #EA8F95;
+}
+.gains .report a {
+  color: #5041BC;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.analytics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 7px;
+  margin-top: 20px;
+}
+.analytics .graph-card {
+  width: 95%;
+}
+.analytics .analytics-sales {
+  background-color: #5041BC;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 20px 0;
+  border-radius: 20px;
+  width: 40%;
+  padding: 20px;
+}
+.analytics .the_target {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+}
+.analytics .the_target p {
+  padding: 7px 15px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+}
+.analytics .the_target h1 {
+  padding: 0 15px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 25px;
+}
+.analytics .que {
+  margin-top: 20px;
+}
+.analytics .que .cleared {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.analytics .que p {
+  padding: 5px 15px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+}
+.analytics .que h1 {
+  padding: 0 15px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 25px;
+}
+.analytics .que .bills {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+}/*# sourceMappingURL=style.css.map */
